@@ -17,8 +17,7 @@ class Song
   end
   
   def self.create
-    @@all << self.new 
-    self.new 
+    self.new.save
   end 
   
   def self.new_by_name(song_name)
@@ -42,7 +41,7 @@ class Song
   end 
   
   def self.alphabetical 
-    @@all.sort_by {|word| word.name} 
+    self.all.sort_by {|song| song.name} 
   end 
   
   
